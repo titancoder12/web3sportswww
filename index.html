@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3Sports</title>
+    <meta name="description" content="Web3Sports - Empowering athletes with real-time performance insights and full data ownership through cutting-edge technology.">
+    <style>
+        body {
+            background: url('images/stadium-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: none;
+            flex-direction: column;
+            background: #444;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            border-radius: 0 0 8px 8px;
+        }
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        nav a:hover {
+            background: #555;
+        }
+        .menu-btn {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 80px auto 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Web3Sports Logo" style="height:50px; margin-right:10px;">
+        <span>Web3Sports</span>
+        <span class="menu-btn" onclick="toggleMenu()">☰</span>
+        <nav id="menu">
+            <a href="#about">About</a>
+            <a href="#mission">Mission</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#athletes">Athletes</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="about" class="scroll-section" style="background: url('images/field.jpg') no-repeat center center/cover; padding: 60px 20px; color: white;">
+        <img src="images/about-banner.jpg" alt="Athletes Training" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
+        <h2>Optimize Your Performance with Data</h2>
+        <p>Empowering athletes with real-time performance insights and full data ownership.</p>
+    </section>
+    <section id="mission" class="scroll-section">
+        <h2>Our Mission</h2>
+        <p>To revolutionize athlete performance analytics using cutting-edge Web3 technology and data science.</p>
+    </section>
+    <section id="how-it-works" class="scroll-section">
+        <img src="images/how-it-works.png" alt="Data Analytics Process" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
+        <h2>How It Works</h2>
+        <p>Our platform collects, analyzes, and provides insights into athletic performance data, ensuring athletes retain full control over their stats.</p>
+    </section>
+    <section id="athletes" class="scroll-section">
+        <img src="images/featured-athletes.jpg" alt="Athletes in Action" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
+        <h2>Featured Athletes</h2>
+        <p>Discover athletes who have leveraged our technology to enhance their performance.</p>
+        <a href="#testimonials" class="button">See What They Say</a>
+    </section>
+    <section id="testimonials" class="scroll-section">
+        <img src="images/testimonials.jpg" alt="Happy Athletes" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
+        <h2>Testimonials</h2>
+        <p>Read what our athletes and experts say about Web3Sports.</p>
+        <a href="#contact" class="button">Get in Touch</a>
+    </section>
+    <section id="contact" class="scroll-section">
+        <h2>Contact Us</h2>
+        <p>Have questions? Reach out to us and let's connect!</p>
+    </section>
+    <section id="newsletter" class="scroll-section">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for the latest updates and insights.</p>
+        <input type="email" placeholder="Enter your email">
+        <button class="button">Subscribe</button>
+    </section>
+    <footer>
+        <img src="images/social-media-icons.png" alt="Follow us on Social Media" style="width:150px; margin-bottom: 10px;">
+        <p>Follow us on social media:</p>
+        <a href="#">Twitter</a> | <a href="#">LinkedIn</a> | <a href="#">Instagram</a>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".scroll-section");
+            function revealSections() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    if (sectionTop < window.innerHeight - 50) {
+                        section.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", revealSections);
+            revealSections();
+        });
+    </script>
+</body>
+</html>
