@@ -80,15 +80,15 @@
     </style>
 </head>
 <body>
-    <header style="display: flex; justify-content: center; align-items: center; padding: 15px; background: #465c65; color: white; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; flex-direction: column; text-align: center;">
+    <header style="display: flex; justify-content: flex-start; align-items: center; padding: 15px; background: #465c65; color: white; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; text-align: left;">
         <img src="images/logo.png" alt="Web3Sports Logo" style="height:50px; margin-right:10px; filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3)) brightness(1.1); opacity: 0.8;">
         <span>Web3Sports</span>
-        <nav id="menu" style="display: flex; gap: 20px; justify-content: center; margin-top: 10px;">
+        <nav id="menu" style="display: none; flex-direction: column; position: absolute; top: 50px; left: 20px; background: #444; padding: 10px; border-radius: 5px;">
             <a href="#products-services" style="color: white; text-decoration: none;">Products & Services</a>
             <a href="#about" style="color: white; text-decoration: none;">About</a>
             <a href="#mission" style="color: white; text-decoration: none;">Mission</a>
             <a href="#how-it-works" style="color: white; text-decoration: none;">How It Works</a>
-            <a href="#athletes" style="color: white; text-decoration: none;">Athletes</a>
+            
             <a href="#contact" style="color: white; text-decoration: none;">Contact</a>
         </nav>
         <span class="menu-btn" onclick="toggleMenu()">☰</span>
@@ -114,31 +114,37 @@
         <h2>Our Mission</h2>
         <p>To revolutionize athlete performance analytics using cutting-edge Web3 technology and data science.</p>
     </section>
+    <section id="products-services" class="scroll-section">
+        <h2>Products & Services</h2>
+        
+        <section id="web3sports-live" class="scroll-section">
+            <h3>Web3Sports Live</h3>
+            <p>Web3Sports Live is a free, advanced real-time game tracking and analytics platform designed for athletes, teams, and leagues. Built on blockchain technology, it offers transparent, immutable, and player-owned performance data. Users can log live game events, track detailed statistics, and leverage data science to gain deep insights that help improve their performance. By integrating cutting-edge analytics with player ownership, Web3Sports Live ensures a transformative sports experience.</p>
+        </section>
+    </section>
     <section id="how-it-works" class="scroll-section">
-        <img src="images/how-it-works.png" alt="Data Analytics Process" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
         <h2>How It Works</h2>
-        <p>Our platform collects, analyzes, and provides insights into athletic performance data, ensuring athletes retain full control over their stats.</p>
+        <p>Web3Sports is an advanced sports data analytics platform that empowers athletes, teams, and leagues with real-time performance tracking, blockchain-backed data ownership, and tokenized rewards.</p>
+        <h3>1. Live Game Tracking & Performance Analytics</h3>
+        <p>Athletes, teams, and leagues can log game events in real-time using the Web3Sports Live platform. The platform records detailed statistics for individual players and teams, helping athletes track their performance.</p>
+        <h3>2. Data Ownership & Blockchain Integration</h3>
+        <p>All performance data is stored immutably on the Solana blockchain, ensuring transparency and security. Players own their stats and can share them with scouts, coaches, or teams on their terms.</p>
+        <h3>3. AI & Data Science for Performance Improvement</h3>
+        <p>The system leverages AI-driven analytics to provide deep insights into player performance. Athletes receive personalized recommendations on how to improve their game using data science.</p>
+        <h3>4. Tokenized Rewards & NFT Achievements</h3>
+        <p>Players earn tokens for exceptional performance, engagement, and achievements. Major milestones (e.g., hitting a grand slam, winning a championship) are minted as NFTs, allowing players to showcase and trade their achievements.</p>
+        <h3>5. Marketplace for Sports Gear & Training</h3>
+        <p>Athletes can use earned tokens to purchase real-world baseball gear or access exclusive training sessions. A blockchain-verified marketplace ensures secure transactions between buyers and sellers.</p>
+        <h3>6. Seamless Mobile & Web Experience</h3>
+        <p>Web3Sports is accessible via web and mobile, providing a smooth user experience across devices. Integration with Solana wallets allows players to securely access their rewards and assets.</p>
     </section>
-    <section id="athletes" class="scroll-section">
-        <img src="images/featured-athletes.jpg" alt="Athletes in Action" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
-        <h2>Featured Athletes</h2>
-        <p>Discover athletes who have leveraged our technology to enhance their performance.</p>
-        <a href="#testimonials" class="button">See What They Say</a>
-    </section>
+    
     
     <section id="contact" class="scroll-section">
         <h2>Contact Us</h2>
         <p>Have questions? Reach out to us and let's connect!</p>
     </section>
-    <section id="products-services" class="scroll-section">
-        <h2>Products & Services</h2>
-        <ul>
-            <li><a href="#web3sports-live">Web3Sports Live</a></li>
-        </ul>
-        <section id="web3sports-live" class="scroll-section">
-            <h3>Web3Sports Live</h3>
-            <p>Web3Sports Live is a free, advanced real-time game tracking and analytics platform designed for athletes, teams, and leagues. Built on blockchain technology, it offers transparent, immutable, and player-owned performance data. Users can log live game events, track detailed statistics, and leverage data science to gain deep insights that help improve their performance. By integrating cutting-edge analytics with player ownership, Web3Sports Live ensures a transformative sports experience.</p>
-        </section>
+    
         
     </section>
     <section id="newsletter" class="scroll-section">
@@ -155,7 +161,11 @@
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
         }
         document.addEventListener("DOMContentLoaded", function() {
             const sections = document.querySelectorAll(".scroll-section");
