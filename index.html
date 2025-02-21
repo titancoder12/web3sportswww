@@ -9,6 +9,16 @@
         body {
             background: url('images/stadium-bg.jpg') no-repeat center center fixed;
             background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            scroll-behavior: smooth;
+            color: #333;
+        
+            background: url('images/stadium-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -27,6 +37,20 @@
             scroll-behavior: smooth;
         }
         header {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 30px;
+            font-size: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        
             background: rgba(70, 92, 101, 0.9);
             color: white;
             padding: 20px;
@@ -89,6 +113,16 @@
             cursor: pointer;
         }
         section {
+            padding: 60px;
+            max-width: 1000px;
+            margin: 120px auto 60px;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        
             padding: 40px;
             max-width: 900px;
             margin: 100px auto 40px;
@@ -114,16 +148,21 @@
         }
         .button {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 15px 30px;
             margin-top: 20px;
             background: linear-gradient(135deg, #007BFF, #0056b3);
             color: white;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 30px;
             font-weight: bold;
+            font-size: 18px;
             border: none;
             transition: background 0.3s ease-in-out, transform 0.2s;
             cursor: pointer;
+        }
+        button:hover {
+            background: linear-gradient(135deg, #0056b3, #003b80);
+            transform: scale(1.08);
         }
         button:hover {
             background: linear-gradient(135deg, #0056b3, #004494);
@@ -146,7 +185,7 @@
         <span class="menu-btn" onclick="toggleMenu()">☰</span>
     </header>
     <section id="mission" class="scroll-section">
-        <h2>Our Mission</h2>
+        <h2>Mission</h2>
         <p>To revolutionize athlete performance analytics using cutting-edge Web3 technology and data science.</p>
     </section>
     <section id="products-services" class="scroll-section">
@@ -161,7 +200,7 @@
             <p>Web3Sports - Connect is an innovative wearable device that seamlessly integrates with Web3Sports Live. Designed for athletes, this smart wearable tracks and records live performance data in real time as players compete. Using AI-driven analytics, it provides instant coaching feedback, helping athletes refine their techniques and improve gameplay on the spot. With Web3Sports - Connect, players gain deeper insights into their performance, making every play a learning opportunity while enhancing team performance during competitions.</p>
         </section>
     </section>
-        <section id="how-it-works" class="scroll-section">
+    <section id="how-it-works" class="scroll-section">
         <h2>How It Works</h2>
         <p>Web3Sports is an advanced sports data analytics platform that empowers athletes, teams, and leagues with real-time performance tracking, blockchain-backed data ownership, and tokenized rewards.</p>
         <h3>1. Live Game Tracking & Performance Analytics</h3>
@@ -178,22 +217,35 @@
         <p>Web3Sports is accessible via web and mobile, providing a smooth user experience across devices. Integration with Solana wallets allows players to securely access their rewards and assets.</p>
     </section>
    
-    <section id="about" class="scroll-section">
-        <h2>About Web3Sports</h2>
+
+    <section id="about" class="scroll-section" style="text-align: left; display: flex; align-items: center; justify-content: space-between;">
+        <div style="flex: 1; padding-right: 40px;">
+            <h2>About Web3Sports</h2>
+            <p>My name is Chris Lin, and I am the founder of Web3Sports. I currently play baseball for UBC Bantam Thunder and participate in hackathons, most recently Hack the North, an invite-only hackathon hosted by the University of Waterloo. As a passionate baseball player and technology enthusiast, I wanted to create something that combined my two greatest interests: sports and computer science.
+
+                Web3Sports was born from a vision to revolutionize athlete performance tracking through real-time data analytics, AI-driven insights, and blockchain technology. My goal is to build a tool that not only enhances training and game-time decision-making but is also something I can personally use to improve my own performance—along with my teammates. By ensuring that data is not just collected but actively leveraged, I aim to empower athletes with actionable insights that drive real improvement.</p>
+        </div>
+        <div style="flex: 1;">
+            <img src="images/chris.png" alt="Web3Sports" style="width:100%;">
+        </div>
     </section>
     
     <section id="contact" class="scroll-section">
         <h2>Contact Us</h2>
-        <p>Have questions? Reach out to us and let's connect!</p>
+        <a href="https://www.linkedin.com/in/christopher-lin-2a9076243/" target="_blank" style="color: #007BFF; text-decoration: none; font-weight: bold;">
+        Connect on LinkedIn
+        </a>
     </section>
-    
         
     <section id="newsletter" class="scroll-section">
         <h2>Stay Updated</h2>
         <p>Subscribe to our newsletter for the latest updates and insights.</p>
-        <input type="email" placeholder="Enter your email">
-        <button class="button">Subscribe</button>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdQ98h-D3aVx4GNOKYB8fT_wnHB7ngFH6DHJvpnnprh67o-tw/formResponse" method="POST" target="_blank">
+            <input type="email" name="entry.1801057301" placeholder="Enter your email" required>
+            <button type="submit" class="button">Subscribe</button>
+        </form>
     </section>
+
     <footer>
         <img src="images/social-media-icons.png" alt="Follow us on Social Media" style="width:150px; margin-bottom: 10px;">
         <p>Follow us on social media:</p>
