@@ -9,6 +9,16 @@
         body {
             background: url('images/stadium-bg.jpg') no-repeat center center fixed;
             background-size: cover;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            scroll-behavior: smooth;
+            color: #333;
+        
+            background: url('images/stadium-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -17,6 +27,20 @@
             scroll-behavior: smooth;
         }
         header {
+            background: rgba(70, 92, 101, 0.9);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        
             background: #465c65;
             color: white;
             padding: 15px;
@@ -31,6 +55,17 @@
             z-index: 1000;
         }
         nav {
+            display: none;
+            flex-direction: column;
+            background: rgba(68, 68, 68, 0.95);
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            width: 220px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        
             display: none;
             flex-direction: column;
             background: #444;
@@ -54,6 +89,15 @@
             cursor: pointer;
         }
         section {
+            padding: 40px;
+            max-width: 900px;
+            margin: 100px auto 40px;
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+        
             padding: 20px;
             max-width: 800px;
             margin: 80px auto 20px;
@@ -69,6 +113,22 @@
             transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
         .button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            border: none;
+            transition: background 0.3s ease-in-out, transform 0.2s;
+            cursor: pointer;
+        }
+        button:hover {
+            background: linear-gradient(135deg, #0056b3, #004494);
+            transform: scale(1.05);
+        }
             display: inline-block;
             padding: 10px 20px;
             margin-top: 20px;
@@ -116,11 +176,11 @@
             <h3>Web3Sports Live - Coming Summer 2025</h3>
             <p>Web3Sports Live is a free, advanced real-time game tracking and analytics platform designed for athletes, teams, and leagues. Built on blockchain technology, it offers transparent, immutable, and player-owned performance data. Users can log live game events, track detailed statistics, and leverage data science to gain deep insights that help improve their performance. By integrating cutting-edge analytics with player ownership, Web3Sports Live ensures a transformative sports experience.</p>
         </section>
+    </section>
         <section id="web3sports-connect" class="scroll-section">
             <h3>Web3Sports Connect - Coming Spring 2026</h3>
             <p>Web3Sports - Connect is an innovative wearable device that seamlessly integrates with Web3Sports Live. Designed for athletes, this smart wearable tracks and records live performance data in real time as players compete. Using AI-driven analytics, it provides instant coaching feedback, helping athletes refine their techniques and improve gameplay on the spot. With Web3Sports - Connect, players gain deeper insights into their performance, making every play a learning opportunity while enhancing team performance during competitions.</p>
         </section>
-    </section>
         <section id="how-it-works" class="scroll-section">
         <h2>How It Works</h2>
         <p>Web3Sports is an advanced sports data analytics platform that empowers athletes, teams, and leagues with real-time performance tracking, blockchain-backed data ownership, and tokenized rewards.</p>
